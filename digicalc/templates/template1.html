@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Django Basic Calculator</title>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<center><h1>Welcome to Django Web based Basic Calculator project by Shina Gupta</h1></center>
+<br>
+<br>
+
+<h1> Basic calculator</h1>
+
+ <form method="get" action="{% url 'calculator' %}">
+        <label for="number1">Number 1:</label>
+        <input type="number" name="number1" required>
+        <br>
+        <label for="number2">Number 2:</label>
+        <input type="number" name="number2" required>
+        <br><br>
+        <button type="submit" name="operation" value="add">Add</button>
+        <button type="submit" name="operation" value="subtract">Subtract</button>
+        <button type="submit" name="operation" value="multiply">Multiply</button>
+        <button type="submit" name="operation" value="divide">Divide</button>
+</form>
+
+{% if result %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
+
+
